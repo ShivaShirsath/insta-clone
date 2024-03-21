@@ -1,8 +1,14 @@
-import logo from './logo.svg';
+import logo from "./logo.svg";
 
 function App() {
   return (
-    <div></div>
+    <div
+      style={{
+        backgroundColor: "black",
+        position: "fixed",
+        inset: 0,
+      }}
+    ></div>
   );
 }
 

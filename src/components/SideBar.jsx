@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../logo";
 import Home from "../assets/Home";
 import SideBarItem from "./SideBarItem";
@@ -11,6 +11,7 @@ import Messenger from "../assets/Messenger";
 import Profile from "../assets/Profiile.png";
 
 const SideBar = () => {
+  const [badge, setBadge] = useState(0);
   const navlist = [
     {
       icon: <Home />,
@@ -31,6 +32,8 @@ const SideBar = () => {
     {
       icon: <Messenger />,
       name: "Messages",
+      badge: badge,
+      onClick: () => setBadge(badge > 49 ? 0 : badge + 1),
     },
     {
       icon: <Notifications />,
@@ -66,7 +69,13 @@ const SideBar = () => {
       <Logo />
       <ul style={{ paddingLeft: 0 }}>
         {navlist.map((item) => (
-          <SideBarItem icon={item.icon} name={item.name} />
+          <SideBarItem
+            icon={item.icon}
+            name={item.name}
+            badge={item?.badge && item?.badge > 0 ? item?.badge : null}
+            onClick={item.onClick}
+            onDoubleClick={item.onDoubleClick}
+          />
         ))}
       </ul>
     </div>

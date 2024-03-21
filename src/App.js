@@ -1,4 +1,5 @@
-import logo from "./logo.svg";
+import Body from "./components/Body";
+import SideBar from "./components/SideBar";
 
 function App() {
   return (
@@ -7,8 +8,12 @@ function App() {
         backgroundColor: "black",
         position: "fixed",
         inset: 0,
+        display: "flex",
       }}
-    ></div>
+    >
+      <SideBar />
+      <Body />
+    </div>
   );
 }
 

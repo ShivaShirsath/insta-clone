@@ -47,6 +47,7 @@ const SideBar = () => {
       icon: (
         <img
           src={Profile}
+          alt={"Profile"}
           style={{
             borderRadius: "50%",
             height: "24px",
